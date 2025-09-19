@@ -3,12 +3,18 @@ from colorama import init, Fore
 import os
 import sys
 from urllib.parse import urlparse
+import pyfiglet
 
 init()
 
 def subpastasAuto():
 	try:
 		os.system("cls" if sys.platform == "win32" else "clear")
+		
+		def banner():
+			lg = pyfiglet.figlet_format("DRecon")
+			print(Fore.GREEN+lg)
+		banner()
 		
 		try:
 			dominio = input(Fore.RED+"Digite o domínio: ")
